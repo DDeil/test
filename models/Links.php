@@ -21,6 +21,8 @@ use yii\db\ActiveRecord;
 class Links extends ActiveRecord
 {
 
+    public const TOKEN_LENGTH = 8;
+
     public static function tableName()
     {
         return 'links';

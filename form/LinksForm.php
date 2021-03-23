@@ -11,11 +11,26 @@ class LinksForm extends Model
     public $lifeTime;
     public $redirectLimit;
 
-    public function rules()
+    /**
+     * @return array
+     */
+    public function rules(): array
     {
         return [
             ['url', 'string', 'length' => [0, 256]],
             [['lifeTime', 'redirectLimit'], 'integer'],
+        ];
+    }
+
+    /**
+     * @return string[]
+     */
+    public function attributeLabels(): array
+    {
+        return [
+            'url'           => 'Адресс',
+            'lifeTime'      => 'Время жизни',
+            'redirectLimit' => 'Лимит переходов',
         ];
     }
 }

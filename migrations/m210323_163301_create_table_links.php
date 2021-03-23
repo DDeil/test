@@ -16,11 +16,11 @@ class m210323_163301_create_table_links extends Migration
             'links',
             [
                 'id'             => $this->primaryKey(),
-                'url'            => $this->string(256),
-                'redirect_limit' => $this->integer(),
-                'life_time'      => $this->integer(),
-                'count_redirect' => $this->integer(),
-                'token'          => $this->string(8),
+                'url'            => $this->string(256)->notNull(),
+                'redirect_limit' => $this->integer()->notNull(),
+                'life_time'      => $this->integer()->notNull(),
+                'count_redirect' => $this->integer()->defaultValue(0),
+                'token'          => $this->string(8)->notNull(),
             ]
         );
 
