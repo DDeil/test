@@ -12,7 +12,19 @@ class m210323_163301_create_table_links extends Migration
      */
     public function safeUp()
     {
+        $this->createTable(
+            'links',
+            [
+                'id'             => $this->primaryKey(),
+                'url'            => $this->string(256),
+                'redirect_limit' => $this->integer(),
+                'life_time'      => $this->integer(),
+                'count_redirect' => $this->integer(),
+                'token'          => $this->string(8),
+            ]
+        );
 
+        $this->createIndex('links-token', 'links', 'token', true);
     }
 
     /**
@@ -20,23 +32,6 @@ class m210323_163301_create_table_links extends Migration
      */
     public function safeDown()
     {
-        echo "m210323_163301_create_table_links cannot be reverted.\n";
-
-        return false;
+        $this->dropTable('links');
     }
-
-    /*
-    // Use up()/down() to run migration code without a transaction.
-    public function up()
-    {
-
-    }
-
-    public function down()
-    {
-        echo "m210323_163301_create_table_links cannot be reverted.\n";
-
-        return false;
-    }
-    */
 }
