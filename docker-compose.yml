@@ -33,7 +33,7 @@ services:
 
   # PHP-FPM
   php:
-    build: ./images/php
+    image: serega2215/pp_php:2.1.1
     container_name: php
     expose:
       - 9000
@@ -52,7 +52,7 @@ services:
 
   # MySQL
   mysql:
-    image: mysql:8.0
+    image: serega2215/pp_mysql:1.0.1
     container_name: mysql
     expose:
       - 3306

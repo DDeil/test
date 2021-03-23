@@ -1,6 +1,0 @@
-test.localhost 172.37.37.1 - - [22/Mar/2021:18:01:53 +0000] "GET / HTTP/1.1" 200 4125 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0" "-"
-test.localhost 172.37.37.1 - - [22/Mar/2021:18:01:53 +0000] "GET /assets/1247249e/css/bootstrap.css HTTP/1.1" 304 0 "http://test.localhost/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0" "-"
-test.localhost 172.37.37.1 - - [22/Mar/2021:18:01:53 +0000] "GET /css/site.css HTTP/1.1" 304 0 "http://test.localhost/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0" "-"
-test.localhost 172.37.37.1 - - [22/Mar/2021:18:01:53 +0000] "GET /assets/68dde718/jquery.js HTTP/1.1" 304 0 "http://test.localhost/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0" "-"
-test.localhost 172.37.37.1 - - [22/Mar/2021:18:01:53 +0000] "GET /assets/6b29752c/yii.js HTTP/1.1" 304 0 "http://test.localhost/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0" "-"
-test.localhost 172.37.37.1 - - [22/Mar/2021:18:01:53 +0000] "GET /assets/1247249e/js/bootstrap.js HTTP/1.1" 304 0 "http://test.localhost/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0" "-"
