@@ -1,15 +1,21 @@
 <?php
 
 /**
- * @var $this yii\web\View
- * @var LinksForm $model
+ *
+ * @var LinksForm               $model
+ * @var ActiveDataProvider      $dataProvider
+ * @var LinksSearch             $searchModel
+ *
  */
 
 use app\form\LinksForm;
+use app\search\LinksSearch;
 use yii\bootstrap\ActiveForm;
 use yii\bootstrap\Html;
+use yii\data\ActiveDataProvider;
+use yii\grid\GridView;
 
-$this->title = 'My Yii Application';
+$this->title = 'Links';
 ?>
 <div class="site-index">
     <div class="body-content">
@@ -29,6 +35,28 @@ $this->title = 'My Yii Application';
                 <?= Html::submitButton('Создать', ['class' => 'btn-lg btn-success']) ?>
             </div>
             <?php ActiveForm::end(); ?>
+        </div>
+
+        <div class="row">
+            <?= GridView::widget([
+                    'dataProvider' => $dataProvider,
+                    'filterModel'  => $searchModel,
+                    'columns'      => [
+                        ['class' => 'yii\grid\SerialColumn'],
+                        'id',
+                        'url',
+                        'redirect_limit',
+                        [
+                            'label' => 'Life time',
+                            'value' => function($model) {
+                                /** @var LinksSearch $model */
+                                return (new DateTime())->setTimestamp($model->life_time)->format('H:i:s') ;
+                            },
+                        ],
+                        'count_redirect',
+                        'token',
+                    ],
+                                 ]) ?>
         </div>
     </div>
 </div>

@@ -4,7 +4,6 @@ namespace app\service;
 
 use app\form\LinksForm;
 use app\models\Links;
-use yii\base\Exception;
 
 class SaveLinkService
 {
@@ -18,7 +17,8 @@ class SaveLinkService
     }
 
     /**
-     * @throws Exception
+     * @return bool
+     * @throws \Exception
      */
     public function process(): bool
     {
@@ -27,15 +27,16 @@ class SaveLinkService
         }
 
         do {
-            $token = \Yii::$app->security->generateRandomString(Links::TOKEN_LENGTH);
+            $token = strtr(\Yii::$app->security->generateRandomString(Links::TOKEN_LENGTH), '-_', 'rT');
         } while(Links::find()->where(['token' => $token])->exists());
 
         $model = new Links();
 
         $model->url            = $this->entity->url;
-        $model->life_time      = $this->entity->lifeTime;
+        $model->life_time      = $this->entity->lifeTimeInSecond;
         $model->redirect_limit = $this->entity->redirectLimit;
         $model->token          = $token;
+        $model->created_at     = (new \DateTime())->format('Y-m-d H:i:s');
 
         return $model->save();
     }

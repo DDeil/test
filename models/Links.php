@@ -9,12 +9,13 @@ use yii\db\ActiveRecord;
  * Class Links
  * @package app\models
  *
- * @property integer  $id
- * @property string   $url
- * @property integer  $redirect_limit
- * @property integer  $life_time
- * @property integer  $count_redirect
- * @property string   $token
+ * @property integer    $id
+ * @property string     $url
+ * @property integer    $redirect_limit
+ * @property integer    $life_time
+ * @property integer    $count_redirect
+ * @property string     $token
+ * @property \DateTime  $created_at
  *
  */
 
